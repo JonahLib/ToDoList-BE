@@ -1,26 +1,38 @@
 {
   "name": "to_do_list_be",
   "version": "1.0.0",
-  "main": "index.js",
-  "type": "commonjs",
-  "scripts": {
-    "build": "tsc"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "format": "prettier --write .",
+    "outdated": "npx npm-check-updates --root --format group -i",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio",
+    "db:setup": "./start-database.sh"
+  },
+  "prettier": "@dc_/prettier-config",
+  "dependencies": {
+    "@prisma/client": "^6.2.1",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
   "devDependencies": {
+    "@dc_/prettier-config": "^1.0.3",
     "@types/body-parser": "^1.19.5",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
-    "@types/node": "^22.10.10",
+    "@types/node": "^22.12.0",
+    "prettier": "^3.4.2",
+    "prisma": "^6.2.1",
+    "tsx": "^4.19.2",
     "typescript": "^5.7.3"
-  },
-  "dependencies": {
-    "body-parser": "^1.20.3",
-    "cors": "^2.8.5",
-    "express": "^4.21.2",
-    "mongoose": "^8.9.5"
   }
 }
